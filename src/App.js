@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {Routes,Route} from 'react-router-dom'
+import Layout from './pages/Layout';
+import PrimarySix from './pages/PrimarySix';
+import PrimarySeven from './pages/PrimarySeven';
+import PrimaryEight from './pages/PrimaryEight';
+import PrimaryNine from './pages/PrimaryNine';
+import "./style.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route path="primarysix" element={<PrimarySix />} />
+      <Route path="primaryseven" element={<PrimarySeven />} />
+      <Route path="primaryeight" element={<PrimaryEight />} />
+      <Route path="primarynine" element={<PrimaryNine />} />
+    </Route>
+  </Routes>
+  )
 }
 
 export default App;
